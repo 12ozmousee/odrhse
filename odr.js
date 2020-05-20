@@ -140,9 +140,11 @@ window.addEventListener('load', function () {
         arg.Inputs.input1.Values.push(p);
 
         jQuery.ajax({
-            url: "https://odr.azure-api.net/predict/score",
+            url: "<your URL>",
             beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader("Content-Type", "application/json");
+                xhrObj.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "7fbc1517a69047c3a0302570f8a6a23a");
+ 
             },
             type: "POST",
             data: JSON.stringify(arg)
